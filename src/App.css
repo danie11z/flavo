@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Nanum+Gothic&family=Source+Sans+Pro:wght@700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #A8DADC;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header{
+  max-width: 425px;
+  width: 100%;
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search{
+  background-image: url('./assets/hamburger.png'), url('./assets/bag.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 5%, 95%;
+  font-size: 3.5vw;
+  height: 5vh;
+  width: 90%;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffffff94;
+  outline: none;
+  padding-left: 12.5vw;
+  padding-right: 12.5vw;
+}
+
+input[type="search"]::-webkit-search-cancel-button{
+  display: none;
+}
+
+.search::placeholder{
+  font-family: 'Charm', cursive;
+  color: #000000;
+  font-size: 4.7vw;
+  font-weight: 700;
+  padding-left: 28vw;
+}
+
+main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.infoProductsBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 33vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product{
+  width: 65vw;
+}
+
+.title, .subTitle{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.title{
+  font-size: 8.5vw;
+}
+
+.price, .text{
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.price{
+  font-size: 8.5vw;
+}
+
+.titleAndPriceBox{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.subTitle, .text{
+  width: 90%;
+}
+
+.purchaseInfoBox{
+  width: 90%;
+  height: 33vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.sizeOptBox{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.opt{
+  width: 38%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quant{
+  border: solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  height: 6vh;
+}
+
+.quantText, .removeBtn, .addBtn{
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.removeBtn, .addBtn{
+  border: none;
+  background-color: transparent;
+  font-size: 5.5vw;
+}
+
+.removeBtn{
+  padding-left: 4vw;
+}
+
+.addBtn{
+  padding-right: 4vw;
+}
+
+.addToCartBtn{
+  height: 6vh;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 3.8vw;
 }

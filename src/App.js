@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import "./App.css"
 import product from "./assets/intensity.png"
 
 export default class flavo extends Component{
@@ -7,39 +8,57 @@ export default class flavo extends Component{
     count: 0,
   }
 
+  Add = () => {
+    this.setState({
+      count: this.state.count +1
+    })
+  }
+
+  Remove = () => {
+    if(this.state.count>0){
+      this.setState({
+        count: this.state.count -1
+      })
+    }
+  }
+
   render(){
     return(
       <>
       <header>
-        <input placeholder="flavo" type="search"  />
+        <input className="search" placeholder="flavo" type="search"  />
       </header>
       <main>
         <figure>
-          <img src={product} alt="Um sachê escrito intensity no topo, com mãos vermelhas na embalagem e um fundo branco com plantas espinhosas. Na parte inferior está escrito flavo" />
+          <img className="product" src={product} alt="Um sachê escrito intensity no topo, com mãos vermelhas na embalagem e um fundo branco com plantas espinhosas. Na parte inferior está escrito flavo" />
         </figure>
-        <section>
-          <div>
-            <h2>INTENSITY</h2>
-            <p>$15</p>
+        <section className="infoProductsBox">
+          <div class="titleAndPriceBox">
+            <h1 className="title">INTENSITY</h1>
+            <p className="price">$15</p>
           </div>
-          <h4>WHAT'S INSIDE</h4>
-          <p>Chill, oregano, safran, paprika</p>
-          <h4>WHY WE LOVE IT</h4>
-          <p>This one will add a little savoury flavour to any food and turn any meal to a cullinary masterpiece.</p>
+          <h3 className="subTitle">WHAT'S INSIDE</h3>
+          <p className="text">Chili, oregano, safran, paprika</p>
+          <h3 className="subTitle">WHY WE LOVE IT</h3>
+          <p className="text">This one will add a little savoury flavour to any food and turn any meal to a cullinary masterpiece.</p>
         </section>
-        <section>
-          <form>
+        <section className="purchaseInfoBox">
+          <form className="sizeOptBox">
+          <label className="opt" for="BAG">
             <input id="BAG" type="radio" name="bag" />
-            <label for="BAG">BAG (75g)</label>
+            BAG (75g)
+          </label>
+          <label className="opt" for="JAR">
             <input id="JAR" type="radio" name="JAR" />
-            <label for="JAR">JAR (150g)</label>
+            JAR (150g)
+          </label>
           </form>
-          <div>
-            <button>-</button>
-            <p>{this.state.count}</p>
-            <button>+</button>
+          <div className="quant">
+            <button className="removeBtn" onClick={this.Remove}>–</button>
+            <p className="quantText">{this.state.count}</p>
+            <button className="addBtn" onClick={this.Add}>+</button>
           </div>
-          <button>ADD TO CART</button>
+          <button className="addToCartBtn">ADD TO CART</button>
         </section>
       </main>
       </>
